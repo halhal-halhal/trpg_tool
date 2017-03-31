@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Scenarios</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Member num</th>
+      <th>Info</th>
+      <th>Detail</th>
+      <th>Creator</th>
+      <th>Npc info</th>
+      <th>Promotion</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @scenarios.each do |scenario| %>
+      <tr>
+        <td><%= scenario.title %></td>
+        <td><%= scenario.member_num %></td>
+        <td><%= scenario.info %></td>
+        <td><%= scenario.detail %></td>
+        <td><%= scenario.creator %></td>
+        <td><%= scenario.npc_info %></td>
+        <td><%= scenario.promotion %></td>
+        <td><%= link_to 'Show', scenario %></td>
+        <td><%= link_to 'Edit', edit_scenario_path(scenario) %></td>
+        <td><%= link_to 'Destroy', scenario, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Scenario', new_scenario_path %>

@@ -1,0 +1,52 @@
+<%= form_for(scenario) do |f| %>
+  <% if scenario.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(scenario.errors.count, "error") %> prohibited this scenario from being saved:</h2>
+
+      <ul>
+      <% scenario.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :member_num %>
+    <%= f.text_field :member_num %>
+  </div>
+
+  <div class="field">
+    <%= f.label :info %>
+    <%= f.text_area :info %>
+  </div>
+
+  <div class="field">
+    <%= f.label :detail %>
+    <%= f.text_area :detail %>
+  </div>
+
+  <div class="field">
+    <%= f.label :creator_id %>
+    <%= f.text_field :creator_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :npc_info %>
+    <%= f.text_area :npc_info %>
+  </div>
+
+  <div class="field">
+    <%= f.label :promotion %>
+    <%= f.text_area :promotion %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
