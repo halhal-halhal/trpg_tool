@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170331131955) do
+ActiveRecord::Schema.define(version: 20170331154928) do
 
   create_table "followings", force: :cascade do |t|
     t.integer  "user_id_id"
@@ -40,6 +40,10 @@ ActiveRecord::Schema.define(version: 20170331131955) do
     t.text     "promotion"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "duration"
+    t.integer  "system"
+    t.integer  "kp"
+    t.integer  "pl"
     t.index ["creator_id"], name: "index_scenarios_on_creator_id"
   end
 

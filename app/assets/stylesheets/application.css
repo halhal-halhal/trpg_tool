@@ -13,3 +13,32 @@
  *= require_tree .
  *= require_self
  */
+
+
+/*-----------------------------
+| シナリオページ
+-----------------------------*/
+#scenario table.scenario_table{
+  width: 100%;
+}
+
+#scenario table.scenario_table td{
+  vertical-align: middle;
+  padding: 0.5em;
+}
+
+#scenario table.scenario_table thead{
+  background-color: rgba(0,0,0,0.1);
+}
+
+#scenario table.scenario_table tbody.scenario_info{
+  border: 2px rgba(0,0,0,0.1) solid;
+}
+
+#scenario table.scenario_table tbody.scenario_info:hover{
+  background-color: rgba(0,0,0,0.1);
+}
+
+#scenario table.scenario_table tbody.scenario_info a:hover{
+  background-color: rgba(0,0,0,0.5);
+}

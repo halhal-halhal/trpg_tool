@@ -7,8 +7,9 @@ class User < ApplicationRecord
   validates :name_id, uniqueness: true
   validates :name, :name_id, presence: true
 
-  has_many :followings
+  has_many :followings, dependent: :destroy
   has_many :users, :through => :followings
-  has_many :participations
+  has_many :participations, dependent: :destroy
   has_many :sessions, :through => :participations
+  has_many :scenarios, dependent: :destroy
 end

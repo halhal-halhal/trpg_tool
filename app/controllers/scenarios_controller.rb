@@ -25,8 +25,8 @@ class ScenariosController < ApplicationController
   # POST /scenarios.json
   def create
     @scenario = Scenario.new(scenario_params)
-
     respond_to do |format|
+      @scenario.creator_id = current_user.id
       if @scenario.save
         format.html { redirect_to @scenario, notice: 'Scenario was successfully created.' }
         format.json { render :show, status: :created, location: @scenario }
@@ -69,6 +69,6 @@ class ScenariosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def scenario_params
-      params.require(:scenario).permit(:title, :member_num, :info, :detail, :creator_id, :npc_info, :promotion)
+      params.require(:scenario).permit(:title, :member_num, :info, :detail, :creator_id, :npc_info, :promotion, :duration)
     end
 end

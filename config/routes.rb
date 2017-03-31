@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get 'user/index'
 
   get 'user/show'
-
+  resources :user
   resources :scenarios
   resources :sessions
   devise_for :users

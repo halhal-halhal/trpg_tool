@@ -1,3 +1,3 @@
 class Scenario < ApplicationRecord
-  belongs_to :creator
+  belongs_to :user, :foreign_key => "creator_id"
 end
