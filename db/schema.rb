@@ -10,7 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170331115753) do
+ActiveRecord::Schema.define(version: 20170331120343) do
+
+  create_table "followings", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "follow_user_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  create_table "participations", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "session_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "sessions", force: :cascade do |t|
     t.string   "name"
