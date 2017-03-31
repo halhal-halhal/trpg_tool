@@ -2,6 +2,9 @@
   <p id="notice"><%= notice %></p>
 
   <h1>Scenarios</h1>
+
+  <%= page_entries_info @scenarios %>
+
   <div class="container">
     <div class="table-responsive">
       <table class="scenario_table table-bordered">
@@ -43,4 +46,6 @@
   <br>
 
   <%= link_to 'New Scenario', new_scenario_path %>
+
+  <%= paginate @scenarios %>
 </div>

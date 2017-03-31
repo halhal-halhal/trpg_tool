@@ -4,7 +4,7 @@ class ScenariosController < ApplicationController
   # GET /scenarios
   # GET /scenarios.json
   def index
-    @scenarios = Scenario.all
+    @scenarios = Scenario.page(params[:page])
   end
 
   # GET /scenarios/1
