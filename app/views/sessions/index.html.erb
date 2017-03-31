@@ -1,0 +1,53 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Sessions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Start time</th>
+      <th>Limit time</th>
+      <th>Difficulty</th>
+      <th>Info</th>
+      <th>Detail</th>
+      <th>Min member</th>
+      <th>Max member</th>
+      <th>Decision</th>
+      <th>Place</th>
+      <th>Finished</th>
+      <th>Member num</th>
+      <th>System name</th>
+      <th>Duration</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sessions.each do |session| %>
+      <tr>
+        <td><%= session.name %></td>
+        <td><%= session.start_time %></td>
+        <td><%= session.limit_time %></td>
+        <td><%= session.difficulty %></td>
+        <td><%= session.info %></td>
+        <td><%= session.detail %></td>
+        <td><%= session.min_member %></td>
+        <td><%= session.max_member %></td>
+        <td><%= session.decision %></td>
+        <td><%= session.place %></td>
+        <td><%= session.finished %></td>
+        <td><%= session.member_num %></td>
+        <td><%= session.system_name %></td>
+        <td><%= session.duration %></td>
+        <td><%= link_to 'Show', session %></td>
+        <td><%= link_to 'Edit', edit_session_path(session) %></td>
+        <td><%= link_to 'Destroy', session, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Session', new_session_path %>

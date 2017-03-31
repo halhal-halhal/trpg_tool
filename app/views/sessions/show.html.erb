@@ -1,0 +1,74 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @session.name %>
+</p>
+
+<p>
+  <strong>Start time:</strong>
+  <%= @session.start_time %>
+</p>
+
+<p>
+  <strong>Limit time:</strong>
+  <%= @session.limit_time %>
+</p>
+
+<p>
+  <strong>Difficulty:</strong>
+  <%= @session.difficulty %>
+</p>
+
+<p>
+  <strong>Info:</strong>
+  <%= @session.info %>
+</p>
+
+<p>
+  <strong>Detail:</strong>
+  <%= @session.detail %>
+</p>
+
+<p>
+  <strong>Min member:</strong>
+  <%= @session.min_member %>
+</p>
+
+<p>
+  <strong>Max member:</strong>
+  <%= @session.max_member %>
+</p>
+
+<p>
+  <strong>Decision:</strong>
+  <%= @session.decision %>
+</p>
+
+<p>
+  <strong>Place:</strong>
+  <%= @session.place %>
+</p>
+
+<p>
+  <strong>Finished:</strong>
+  <%= @session.finished %>
+</p>
+
+<p>
+  <strong>Member num:</strong>
+  <%= @session.member_num %>
+</p>
+
+<p>
+  <strong>System name:</strong>
+  <%= @session.system_name %>
+</p>
+
+<p>
+  <strong>Duration:</strong>
+  <%= @session.duration %>
+</p>
+
+<%= link_to 'Edit', edit_session_path(@session) %> |
+<%= link_to 'Back', sessions_path %>

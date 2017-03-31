@@ -1,0 +1,87 @@
+<%= form_for(session) do |f| %>
+  <% if session.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(session.errors.count, "error") %> prohibited this session from being saved:</h2>
+
+      <ul>
+      <% session.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :start_time %>
+    <%= f.time_select :start_time %>
+  </div>
+
+  <div class="field">
+    <%= f.label :limit_time %>
+    <%= f.time_select :limit_time %>
+  </div>
+
+  <div class="field">
+    <%= f.label :difficulty %>
+    <%= f.number_field :difficulty %>
+  </div>
+
+  <div class="field">
+    <%= f.label :info %>
+    <%= f.text_area :info %>
+  </div>
+
+  <div class="field">
+    <%= f.label :detail %>
+    <%= f.text_area :detail %>
+  </div>
+
+  <div class="field">
+    <%= f.label :min_member %>
+    <%= f.number_field :min_member %>
+  </div>
+
+  <div class="field">
+    <%= f.label :max_member %>
+    <%= f.number_field :max_member %>
+  </div>
+
+  <div class="field">
+    <%= f.label :decision %>
+    <%= f.check_box :decision %>
+  </div>
+
+  <div class="field">
+    <%= f.label :place %>
+    <%= f.text_field :place %>
+  </div>
+
+  <div class="field">
+    <%= f.label :finished %>
+    <%= f.check_box :finished %>
+  </div>
+
+  <div class="field">
+    <%= f.label :member_num %>
+    <%= f.number_field :member_num %>
+  </div>
+
+  <div class="field">
+    <%= f.label :system_name %>
+    <%= f.text_field :system_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :duration %>
+    <%= f.text_field :duration %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

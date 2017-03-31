@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  start_time: 2017-03-31 20:31:09
+  limit_time: 2017-03-31 20:31:09
+  difficulty: 1
+  info: MyText
+  detail: MyText
+  min_member: 1
+  max_member: 1
+  decision: false
+  place: MyString
+  finished: false
+  member_num: 1
+  system_name: MyString
+  duration: MyString
+
+two:
+  name: MyString
+  start_time: 2017-03-31 20:31:09
+  limit_time: 2017-03-31 20:31:09
+  difficulty: 1
+  info: MyText
+  detail: MyText
+  min_member: 1
+  max_member: 1
+  decision: false
+  place: MyString
+  finished: false
+  member_num: 1
+  system_name: MyString
+  duration: MyString
