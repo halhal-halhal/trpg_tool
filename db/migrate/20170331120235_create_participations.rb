@@ -1,8 +1,8 @@
 class CreateParticipations < ActiveRecord::Migration[5.0]
   def change
     create_table :participations do |t|
-      t.integer :user_id
-      t.integer :session_id
+      t.references :user_id
+      t.references :session_id
 
       t.timestamps
     end

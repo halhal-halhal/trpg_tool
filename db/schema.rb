@@ -10,20 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170331120343) do
+ActiveRecord::Schema.define(version: 20170331121825) do
 
   create_table "followings", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "follow_user_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.integer  "user_id_id"
+    t.integer  "follow_user_id_id"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.index ["follow_user_id_id"], name: "index_followings_on_follow_user_id_id"
+    t.index ["user_id_id"], name: "index_followings_on_user_id_id"
   end
 
   create_table "participations", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "session_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "user_id_id"
+    t.integer  "session_id_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["session_id_id"], name: "index_participations_on_session_id_id"
+    t.index ["user_id_id"], name: "index_participations_on_user_id_id"
   end
 
   create_table "sessions", force: :cascade do |t|
@@ -41,8 +45,10 @@ ActiveRecord::Schema.define(version: 20170331120343) do
     t.integer  "member_num"
     t.string   "system_name"
     t.string   "duration"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.integer  "game_keeper_id"
+    t.index ["game_keeper_id"], name: "index_sessions_on_game_keeper_id"
   end
 
   create_table "taggings", force: :cascade do |t|
