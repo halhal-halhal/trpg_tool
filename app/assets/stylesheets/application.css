@@ -1,44 +1,33 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
-
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+* or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*
+*= require_tree .
+*= require_self
+*/
 
 /*-----------------------------
 | シナリオページ
 -----------------------------*/
-#scenario table.scenario_table{
+/*= PC用 =*/
+#scenario h4{
+  font-size: 1.2em;
+}
+
+#scenario div.row div.info{
   width: 100%;
 }
 
-#scenario table.scenario_table td{
-  vertical-align: middle;
-  padding: 0.5em;
-}
+#scenario div.row div.info div.head_info{
+  }
+#scenario div.row div.info div.bottom_info{
 
-#scenario table.scenario_table thead{
-  background-color: rgba(0,0,0,0.1);
-}
-
-#scenario table.scenario_table tbody.scenario_info{
-  border: 2px rgba(0,0,0,0.1) solid;
-}
-
-#scenario table.scenario_table tbody.scenario_info:hover{
-  background-color: rgba(0,0,0,0.1);
-}
-
-#scenario table.scenario_table tbody.scenario_info a:hover{
-  background-color: rgba(0,0,0,0.5);
 }

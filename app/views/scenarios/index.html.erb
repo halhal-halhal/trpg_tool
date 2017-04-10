@@ -1,48 +1,77 @@
 <div id="scenario">
   <p id="notice"><%= notice %></p>
 
-  <h1>Scenarios</h1>
+  <h1>シナリオ集</h1>
 
   <%= page_entries_info @scenarios %>
-
   <div class="container">
-    <div class="table-responsive">
-      <table class="scenario_table table-bordered">
-        <thead>
-          <tr>
-            <th>シナリオ名</th>
-            <th>人数</th>
-            <th>時間</th>
-            <th>KP難易度</th>
-            <th>PL難易度</th>
-            <th>作者</th>
-            <!-- <th colspan="3"></th> -->
-          </tr>
-        </thead>
-
-        <tbody>
-          <% @scenarios.each do |scenario| %>
-          <tbody class="scenario_info">
-            <tr>
-              <td><%= link_to scenario.title, scenario %></td>
-              <td><%= scenario.member_num %></td>
-              <td><%= scenario.duration %></td>
-              <td><%= scenario.kp %></td>
-              <td><%= scenario.pl %></td>
-              <td><%= link_to User.find(scenario.creator_id).name, '/user/'+scenario.creator_id.to_s %></td>
-            </tr>
-            <tr>
-              <td colspan="6"><%= scenario.promotion %></td>
-            </tr>
-          </tbody>
-          <!-- <td><%= link_to 'Show', scenario %></td>
-          <td><%= link_to 'Edit', edit_scenario_path(scenario) %></td>
-          <td><%= link_to 'Destroy', scenario, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
-          <% end %>
-        </tbody>
-      </table>
+    <div class="row">
+      <div class="col-md-4 hidden-xs hidden-sm">
+        <h3>シナリオ名</h3>
+      </div>
+      <div class="col-md-1 hidden-xs hidden-sm">
+        <h3>人数</h3>
+      </div>
+      <div class="col-md-1 hidden-xs hidden-sm">
+        <h3>時間</h3>
+      </div>
+      <div class="col-md-2 hidden-xs hidden-sm">
+        <h3>KP難易度</h3>
+      </div>
+      <div class="col-md-2 hidden-xs hidden-sm">
+        <h3>PL難易度</h3>
+      </div>
+      <div class="col-md-2 hidden-xs hidden-sm">
+        <h3>作者</h3>
+      </div>
     </div>
   </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <hr>
+      </div>
+      <% @scenarios.each do |scenario| %>
+      <div class="info">
+        <div class="head_info">
+          <div class="col-md-4 col-sm-6 col-xs-6">
+            <h4><%= link_to scenario.title, scenario %></h4>
+          </div>
+          <div class="col-md-1 col-sm-3 col-xs-3">
+            <h4><%= scenario.member_num %></h4>
+          </div>
+          <div class="col-md-1 col-sm-3 col-xs-3">
+            <h4><%= scenario.duration %></h4>
+          </div>
+          <div class="col-md-2 hidden-xs hidden-sm">
+            <h4><%= scenario.kp %></h4>
+          </div>
+          <div class="col-md-2 hidden-xs hidden-sm">
+            <h4><%= scenario.pl %></h4>
+          </div>
+          <div class="col-md-2 hidden-xs hidden-sm">
+            <h4><%= link_to User.find(scenario.creator_id).name, '/user/'+scenario.creator_id.to_s %></h4>
+          </div>
+        </div>
+        <div class="bottom_info">
+          <div class="col-md-12 col-sm-8 col-xs-8">
+            <h4><%= scenario.promotion %></h4>
+          </div>
+          <div class="hidden-md hidden-lg col-sm-4 col-xs-4">
+            <h4><%= link_to User.find(scenario.creator_id).name, '/user/'+scenario.creator_id.to_s %> 様</h4>
+          </div>
+        </div>
+        <!-- <td><%= link_to 'Show', scenario %></td>
+        <td><%= link_to 'Edit', edit_scenario_path(scenario) %></td>
+        <td><%= link_to 'Destroy', scenario, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+        <div class="col-xs-12">
+          <hr>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+
   <br>
 
   <%= link_to 'New Scenario', new_scenario_path %>
